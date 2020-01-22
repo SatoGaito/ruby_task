@@ -47,13 +47,9 @@ def q5
   array2 = [1, 5, 8, 10]
 
   # 以下に回答を記載
-  if array1.empty?
-    p true
-  end
+  puts array1.empty?
 
-  unless array2.empty?
-    p false
-  end
+  puts array2.empty?
 
 end
 
