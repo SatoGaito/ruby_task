@@ -170,6 +170,20 @@ end
 
 class UserQ17
   # 以下に回答を記載
+  def initialize(info)
+    @name = info[:name]
+    @age = info[:age]
+    @gender = info[:gender]
+    @admin = info[:admin]
+  end
+
+  def info
+    puts "名前 : #{@name}"
+    puts "年齢 : #{@age}"
+    puts "性別 : #{@gender}"
+    puts "管理者権限 : #{@admin == true ? "有り" : "無し"}"
+  end
+
 
 
 end
@@ -186,6 +200,20 @@ end
 
 class UserQ18
   # 以下に回答を記載
+  def initialize(info)
+    @name = info[:name]
+    @age = info[:age]
+  end
+
+  def introduce
+    case @age
+    when 32
+      puts "こんにちは，あじーと申します。宜しくお願いいたします。"
+    when 10
+      puts "はいさいまいど〜，ゆたぼんです！！！"
+    end
+    
+  end
 
 end
 
@@ -204,6 +232,7 @@ class Item
   def initialize(name)
     @name = name
   end
+
 end
 
 def q19
