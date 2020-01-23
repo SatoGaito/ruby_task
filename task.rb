@@ -211,9 +211,9 @@ class UserQ18
   def introduce
     case @age
     when 15..35
-      print "こんにちは，あじーと申します。宜しくお願いいたします。"
+      "こんにちは，あじーと申します。宜しくお願いいたします。"
     when 0..10
-      print "はいさいまいど〜，ゆたぼんです！！！"
+      "はいさいまいど〜，ゆたぼんです！！！"
     end
     
   end
@@ -232,13 +232,11 @@ end
 class Item
   # 以下を修正して下さい
 
-  def initialize(**name)
-    @name = name[:name]
+  def initialize(name:)
+    @name = name
   end
 
-  def name 
-    puts "#{@name}"
-  end
+  attr_reader :name
 
 end
 
@@ -254,6 +252,7 @@ class UserQ20
     @name = info[:name]
     @age = info[:age]
   end
+
   attr_reader :name, :age
 end
 
@@ -269,16 +268,20 @@ class Zoo
   end
 
   def info_entry_fee(user)
+
+    fee = 
     case user.age
     when 0..5
-      puts "#{user.name}の入場料金は #{@infant}円です。"
+      @infant
     when 6..12
-      puts "#{user.name}の入場料金は #{@children}円です。"
+      @children
     when 13..64
-      puts "#{user.name}の入場料金は #{@adult}円です。"
+      @adult
     when 65..120
-      puts "#{user.name}の入場料金は #{@senior}円です。"
+      @senior
     end
+
+    puts "#{user.name}さんの入場料は#{fee}です。"
   end
 
 end
